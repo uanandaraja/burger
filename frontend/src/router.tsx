@@ -1,8 +1,6 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/react-router";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Posts } from "./pages/Posts";
-import { Header } from "./components/Header";
+import { Auth } from "./pages/Auth";
 import { LandingHeader } from "./components/landing";
 import { useRouterState } from "@tanstack/react-router";
 
@@ -12,7 +10,7 @@ function RootComponent() {
 
   return (
     <div className="min-h-screen">
-      {isLandingPage ? <LandingHeader /> : <Header />}
+      {isLandingPage && <LandingHeader />}
       <Outlet />
     </div>
   );
@@ -30,22 +28,15 @@ const indexRoute = createRoute({
   component: Home,
 });
 
-// About route
-const aboutRoute = createRoute({
+// Auth route
+const authRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: "/about",
-  component: About,
-});
-
-// Posts route
-const postsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/posts",
-  component: Posts,
+  path: "/auth",
+  component: Auth,
 });
 
 // Create route tree
-const routeTree = rootRoute.addChildren([indexRoute, aboutRoute, postsRoute]);
+const routeTree = rootRoute.addChildren([indexRoute, authRoute]);
 
 // Create router
 export const router = createRouter({ routeTree });
