@@ -60,7 +60,7 @@ export const router = createRouter({ routeTree });
 
 // Register router for type safety
 declare module "@tanstack/react-router" {
-  type Register = {
+  interface Register {
     router: typeof router;
-  };
+  }
 }
