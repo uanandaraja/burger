@@ -1,6 +1,7 @@
 import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/react-router";
 import { Home } from "./pages/Home";
 import { Auth } from "./pages/Auth";
+import { Dashboard } from "./pages/Dashboard";
 import { LandingHeader } from "./components/landing";
 import { useRouterState } from "@tanstack/react-router";
 
@@ -35,8 +36,15 @@ const authRoute = createRoute({
   component: Auth,
 });
 
+// Dashboard route
+const dashboardRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/dashboard",
+  component: Dashboard,
+});
+
 // Create route tree
-const routeTree = rootRoute.addChildren([indexRoute, authRoute]);
+const routeTree = rootRoute.addChildren([indexRoute, authRoute, dashboardRoute]);
 
 // Create router
 export const router = createRouter({ routeTree });
