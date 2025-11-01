@@ -2,19 +2,19 @@ export function Features() {
   const features = [
     {
       title: "Bun Runtime",
-      description: "Fast JavaScript runtime with built-in bundler, test runner, and package manager. No need for separate tools.",
+      description: "All-in-one fast JavaScript runtime and package manager.",
     },
     {
       title: "Type-Safe APIs",
-      description: "End-to-end type safety with TypeScript. Write backend routes and call them from the frontend with full autocomplete.",
+      description: "End-to-end type safety across backend and frontend.",
     },
     {
       title: "Hot Module Reload",
-      description: "Instant feedback during development. Bun's HMR watches files and hot-reloads both backend and frontend automatically.",
+      description: "Instant hot reload for backend and frontend development.",
     },
     {
       title: "Modern UI Components",
-      description: "shadcn/ui components with Tailwind CSS. Accessible, customizable, and ready to use.",
+      description: "Ready-to-use accessible components with Tailwind CSS.",
     },
   ];
 
