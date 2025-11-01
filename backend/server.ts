@@ -1,5 +1,5 @@
 import { serve } from "bun";
-import index from "./index.html";
+import index from "../frontend/src/index.html";
 
 const server = serve({
   routes: {
@@ -39,3 +39,4 @@ const server = serve({
 });
 
 console.log(`🚀 Server running at ${server.url}`);
+
