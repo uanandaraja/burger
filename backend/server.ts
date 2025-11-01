@@ -3,9 +3,14 @@ import index from "../frontend/src/index.html";
 
 const server = serve({
   routes: {
+    // Frontend routes - serve React app for client-side routing
+    "/about": index,
+    "/posts": index,
+
     // Serve index.html for all unmatched routes.
     "/*": index,
 
+    // API routes
     "/api/hello": {
       async GET(req) {
         return Response.json({
