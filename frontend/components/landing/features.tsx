@@ -24,10 +24,10 @@ export function Features() {
         What's included
       </h2>
       <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-        {features.map((feature, index) => (
+        {features.map((feature) => (
           <div
             className="space-y-3 rounded-lg border border-border bg-card p-6"
-            key={index}
+            key={feature.title}
           >
             <h3 className="font-semibold text-card-foreground text-xl">
               {feature.title}

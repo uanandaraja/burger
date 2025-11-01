@@ -1,4 +1,6 @@
-import { Features, Footer, Hero } from "@/components/landing";
+import { Features } from "@/components/landing/features";
+import { Footer } from "@/components/landing/footer";
+import { Hero } from "@/components/landing/hero";
 
 export function Home() {
   return (

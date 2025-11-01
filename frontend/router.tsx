@@ -5,7 +5,7 @@ import {
   Outlet,
   useRouterState,
 } from "@tanstack/react-router";
-import { LandingHeader } from "./components/landing";
+import { LandingHeader } from "./components/landing/landing-header";
 import { Auth } from "./pages/auth";
 import { Dashboard } from "./pages/dashboard";
 import { Home } from "./pages/home";

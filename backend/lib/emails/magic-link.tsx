@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
 
-type MagicLinkEmailProps = {
+interface MagicLinkEmailProps {
   url: string;
-};
+}
 
 export function MagicLinkEmail({ url }: MagicLinkEmailProps): ReactElement {
   return (

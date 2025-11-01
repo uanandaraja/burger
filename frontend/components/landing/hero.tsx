@@ -19,22 +19,40 @@ export function Hero() {
         </div>
 
         <div className="flex flex-wrap items-center justify-start gap-6 py-4">
-          <img alt="Bun" className="h-6 w-auto opacity-70" src={bunLogo} />
-          <img alt="React" className="h-6 w-auto opacity-70" src={reactLogo} />
+          <img
+            alt="Bun"
+            className="h-6 w-auto opacity-70"
+            height={24}
+            src={bunLogo}
+            width={24}
+          />
+          <img
+            alt="React"
+            className="h-6 w-auto opacity-70"
+            height={24}
+            src={reactLogo}
+            width={24}
+          />
           <img
             alt="TypeScript"
             className="h-6 w-auto opacity-70"
+            height={24}
             src={typescriptLogo}
+            width={24}
           />
           <img
             alt="Tailwind CSS"
             className="h-6 w-auto opacity-70"
+            height={24}
             src={tailwindLogo}
+            width={24}
           />
           <img
             alt="TanStack Router"
             className="h-6 w-auto opacity-70"
+            height={24}
             src={tanstackLogo}
+            width={24}
           />
         </div>
 

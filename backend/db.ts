@@ -1,6 +1,6 @@
 import { SQL } from "bun";
 
-const databaseUrl = process.env.DATABASE_URL!;
+const databaseUrl = process.env.DATABASE_URL || "";
 
 export const db = new SQL(databaseUrl);
 
