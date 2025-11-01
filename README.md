@@ -74,8 +74,8 @@ burger/
 - `backend/auth.ts` - Better Auth configuration
 - `backend/db/schema.ts` - Database schema (Drizzle)
 - `backend/db/index.ts` - Database connection and exports
-- `frontend/src/router.tsx` - Route definitions and layout
-- `frontend/src/App.tsx` - React app wrapper
+- `frontend/router.tsx` - Route definitions and layout
+- `frontend/App.tsx` - React app wrapper
 - `backend/routes/` - All backend routes organized by concern
 
 ## References

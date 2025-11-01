@@ -1,4 +1,4 @@
-import index from "../../frontend/src/index.html";
+import index from "../../frontend/index.html";
 
 export const frontendRoutes = {
   "/*": index,
