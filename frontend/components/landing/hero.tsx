@@ -57,12 +57,12 @@ export function Hero() {
         </div>
 
         <div className="flex flex-col items-start justify-start gap-4 pt-4 sm:flex-row">
-          <Button className="font-semibold" size="lg">
-            Get started now
+          <Button asChild className="font-semibold" size="lg">
+            <a href="/auth">Get started now</a>
           </Button>
           <Button asChild className="font-semibold" size="lg" variant="outline">
             <a
-              href="https://github.com"
+              href="https://github.com/uanandaraja/burger"
               rel="noopener noreferrer"
               target="_blank"
             >
