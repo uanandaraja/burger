@@ -1,38 +1,8 @@
 import { serve } from "bun";
-import index from "../frontend/src/index.html";
+import { routes } from "./routes";
 
 const server = serve({
-  routes: {
-    // Frontend routes - serve React app for client-side routing
-    "/about": index,
-    "/posts": index,
-
-    // Serve index.html for all unmatched routes.
-    "/*": index,
-
-    // API routes
-    "/api/hello": {
-      async GET(req) {
-        return Response.json({
-          message: "Hello, world!",
-          method: "GET",
-        });
-      },
-      async PUT(req) {
-        return Response.json({
-          message: "Hello, world!",
-          method: "PUT",
-        });
-      },
-    },
-
-    "/api/hello/:name": async req => {
-      const name = req.params.name;
-      return Response.json({
-        message: `Hello, ${name}!`,
-      });
-    },
-  },
+  routes,
 
   development: process.env.NODE_ENV !== "production" && {
     // Enable browser hot reloading in development
