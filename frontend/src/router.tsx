@@ -3,11 +3,16 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Posts } from "./pages/Posts";
 import { Header } from "./components/Header";
+import { LandingHeader } from "./components/landing";
+import { useRouterState } from "@tanstack/react-router";
 
 function RootComponent() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isLandingPage = pathname === "/";
+
   return (
     <div className="min-h-screen">
-      <Header />
+      {isLandingPage ? <LandingHeader /> : <Header />}
       <Outlet />
     </div>
   );
