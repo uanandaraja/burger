@@ -1,4 +1,9 @@
 import { Button } from "@/components/ui/button";
+import bunLogo from "@/public/logos/bun.svg";
+import reactLogo from "@/public/logos/react_light.svg";
+import typescriptLogo from "@/public/logos/typescript.svg";
+import tailwindLogo from "@/public/logos/tailwindcss.svg";
+import tanstackLogo from "@/public/logos/tanstack.svg";
 
 export function Hero() {
   return (
@@ -14,11 +19,11 @@ export function Hero() {
         </div>
         
         <div className="flex flex-wrap items-center justify-start gap-6 py-4">
-          <div className="text-sm text-muted-foreground font-semibold">Bun</div>
-          <div className="text-sm text-muted-foreground font-semibold">React</div>
-          <div className="text-sm text-muted-foreground font-semibold">TypeScript</div>
-          <div className="text-sm text-muted-foreground font-semibold">Tailwind CSS</div>
-          <div className="text-sm text-muted-foreground font-semibold">TanStack Router</div>
+          <img src={bunLogo} alt="Bun" className="h-6 w-auto opacity-70" />
+          <img src={reactLogo} alt="React" className="h-6 w-auto opacity-70" />
+          <img src={typescriptLogo} alt="TypeScript" className="h-6 w-auto opacity-70" />
+          <img src={tailwindLogo} alt="Tailwind CSS" className="h-6 w-auto opacity-70" />
+          <img src={tanstackLogo} alt="TanStack Router" className="h-6 w-auto opacity-70" />
         </div>
         
         <div className="flex flex-col sm:flex-row items-start justify-start gap-4 pt-4">
