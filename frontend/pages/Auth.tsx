@@ -1,8 +1,8 @@
+import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Link } from "@tanstack/react-router";
 import { signIn } from "@/lib/auth-client";
 
 export function Auth() {
@@ -21,7 +21,7 @@ export function Auth() {
         callbackURL: "/dashboard",
       });
       setMessage("Check your email for the magic link!");
-    } catch (error) {
+    } catch (_error) {
       setMessage("Something went wrong. Please try again.");
     } finally {
       setIsLoading(false);
@@ -35,17 +35,17 @@ export function Auth() {
         provider: "google",
         callbackURL: "/dashboard",
       });
-    } catch (error) {
+    } catch (_error) {
       setMessage("Something went wrong. Please try again.");
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-md space-y-8">
         <div className="space-y-2 text-center">
-          <h1 className="text-3xl md:text-4xl font-semibold text-foreground">
+          <h1 className="font-semibold text-3xl text-foreground md:text-4xl">
             Welcome back
           </h1>
           <p className="text-muted-foreground">
@@ -53,38 +53,40 @@ export function Auth() {
           </p>
         </div>
 
-        <form onSubmit={handleMagicLink} className="space-y-6">
+        <form className="space-y-6" onSubmit={handleMagicLink}>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
-              id="email"
-              type="email"
-              placeholder="you@example.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
               disabled={isLoading}
+              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              required
+              type="email"
+              value={email}
             />
           </div>
 
           {message && (
-            <p className={`text-sm text-center ${message.includes("Check") ? "text-foreground" : "text-destructive"}`}>
+            <p
+              className={`text-center text-sm ${message.includes("Check") ? "text-foreground" : "text-destructive"}`}
+            >
               {message}
             </p>
           )}
 
-          <Button 
-            type="submit" 
-            size="lg" 
+          <Button
             className="w-full font-semibold"
             disabled={isLoading}
+            size="lg"
+            type="submit"
           >
             {isLoading ? "Sending..." : "Send magic link"}
           </Button>
 
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
+              <span className="w-full border-border border-t" />
             </div>
             <div className="relative flex justify-center text-xs">
               <span className="bg-background px-2 text-muted-foreground">
@@ -93,25 +95,28 @@ export function Auth() {
             </div>
           </div>
 
-          <Button 
-            type="button"
-            variant="outline" 
-            size="lg" 
+          <Button
             className="w-full font-semibold"
-            onClick={handleGoogleSignIn}
             disabled={isLoading}
+            onClick={handleGoogleSignIn}
+            size="lg"
+            type="button"
+            variant="outline"
           >
             Sign in with Google
           </Button>
 
-          <div className="text-center text-sm text-muted-foreground">
+          <div className="text-center text-muted-foreground text-sm">
             Don't have an account?{" "}
-            <Link to="/auth" className="font-semibold text-foreground hover:underline">
+            <Link
+              className="font-semibold text-foreground hover:underline"
+              to="/auth"
+            >
               Sign up
             </Link>
           </div>
 
-          <p className="text-xs text-center text-muted-foreground">
+          <p className="text-center text-muted-foreground text-xs">
             By signing in, you agree to our Terms of Service and Privacy Policy
           </p>
         </form>
@@ -119,4 +124,3 @@ export function Auth() {
     </div>
   );
 }
-

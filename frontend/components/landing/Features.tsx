@@ -20,22 +20,22 @@ export function Features() {
 
   return (
     <section className="container mx-auto px-4 py-16 md:py-24">
-      <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-foreground">
+      <h2 className="mb-12 text-center font-semibold text-3xl text-foreground md:text-4xl">
         What's included
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
         {features.map((feature, index) => (
-          <div key={index} className="space-y-3 p-6 rounded-lg border border-border bg-card">
-            <h3 className="text-xl font-semibold text-card-foreground">
+          <div
+            className="space-y-3 rounded-lg border border-border bg-card p-6"
+            key={index}
+          >
+            <h3 className="font-semibold text-card-foreground text-xl">
               {feature.title}
             </h3>
-            <p className="text-muted-foreground">
-              {feature.description}
-            </p>
+            <p className="text-muted-foreground">{feature.description}</p>
           </div>
         ))}
       </div>
     </section>
   );
 }
-

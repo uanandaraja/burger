@@ -6,17 +6,14 @@ export function LandingHeader() {
     <header className="bg-background">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-semibold text-foreground">
+          <Link className="font-semibold text-foreground text-xl" to="/">
             Burger
           </Link>
-          <Button variant="outline" className="font-semibold" asChild>
-            <Link to="/auth">
-              Try signing in
-            </Link>
+          <Button asChild className="font-semibold" variant="outline">
+            <Link to="/auth">Try signing in</Link>
           </Button>
         </div>
       </div>
     </header>
   );
 }
-

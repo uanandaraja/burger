@@ -1,5 +1,6 @@
+export type { InferInsertModel, InferSelectModel } from "drizzle-orm";
+
 import { pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
-import type { InferSelectModel, InferInsertModel } from "drizzle-orm";
 
 // Better Auth tables (for reference - these are managed by Better Auth CLI)
 // These are here for type safety when querying with Drizzle
@@ -74,4 +75,3 @@ export type Verification = InferSelectModel<typeof verification>;
 
 // Re-export InferInsertModel for creating new records
 export type { InferInsertModel };
-

@@ -7,4 +7,3 @@ export const healthRoutes = {
     headers: { "Content-Type": "text/plain" },
   }),
 };
-

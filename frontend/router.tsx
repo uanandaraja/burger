@@ -1,9 +1,14 @@
-import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/react-router";
-import { Home } from "./pages/Home";
+import {
+  createRootRoute,
+  createRoute,
+  createRouter,
+  Outlet,
+  useRouterState,
+} from "@tanstack/react-router";
+import { LandingHeader } from "./components/landing";
 import { Auth } from "./pages/Auth";
 import { Dashboard } from "./pages/Dashboard";
-import { LandingHeader } from "./components/landing";
-import { useRouterState } from "@tanstack/react-router";
+import { Home } from "./pages/Home";
 
 function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -44,15 +49,18 @@ const dashboardRoute = createRoute({
 });
 
 // Create route tree
-const routeTree = rootRoute.addChildren([indexRoute, authRoute, dashboardRoute]);
+const routeTree = rootRoute.addChildren([
+  indexRoute,
+  authRoute,
+  dashboardRoute,
+]);
 
 // Create router
 export const router = createRouter({ routeTree });
 
 // Register router for type safety
 declare module "@tanstack/react-router" {
-  interface Register {
+  type Register = {
     router: typeof router;
-  }
+  };
 }
-

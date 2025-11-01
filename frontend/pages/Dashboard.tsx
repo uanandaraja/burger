@@ -5,8 +5,8 @@ export function Dashboard() {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
+      <div className="mx-auto max-w-4xl">
+        <h1 className="mb-4 font-semibold text-3xl text-foreground md:text-4xl">
           Dashboard
         </h1>
         {session?.user ? (
@@ -16,12 +16,9 @@ export function Dashboard() {
             </p>
           </div>
         ) : (
-          <p className="text-muted-foreground">
-            Not authenticated
-          </p>
+          <p className="text-muted-foreground">Not authenticated</p>
         )}
       </div>
     </div>
   );
 }
-

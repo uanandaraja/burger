@@ -1,7 +1,7 @@
 import { serve } from "bun";
 import { routes } from "./routes";
 
-const server = serve({
+const _server = serve({
   routes,
 
   development: process.env.NODE_ENV !== "production" && {
@@ -13,5 +13,4 @@ const server = serve({
   },
 });
 
-console.log(`🚀 Server running at ${server.url}`);
-
+// Server running at ${server.url}

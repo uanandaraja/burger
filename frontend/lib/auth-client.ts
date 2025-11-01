@@ -1,5 +1,5 @@
-import { createAuthClient } from "better-auth/react";
 import { magicLinkClient } from "better-auth/client/plugins";
+import { createAuthClient } from "better-auth/react";
 
 // Get base URL - Since frontend and backend run on same server, use window.location.origin
 // Bun exposes BUN_PUBLIC_* env vars via import.meta.env if needed
@@ -18,4 +18,3 @@ export const authClient = createAuthClient({
 });
 
 export const { signIn, signUp, signOut, useSession } = authClient;
-

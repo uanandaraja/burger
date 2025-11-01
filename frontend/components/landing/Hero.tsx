@@ -1,37 +1,53 @@
 import { Button } from "@/components/ui/button";
 import bunLogo from "@/public/logos/bun.svg";
 import reactLogo from "@/public/logos/react_light.svg";
-import typescriptLogo from "@/public/logos/typescript.svg";
 import tailwindLogo from "@/public/logos/tailwindcss.svg";
 import tanstackLogo from "@/public/logos/tanstack.svg";
+import typescriptLogo from "@/public/logos/typescript.svg";
 
 export function Hero() {
   return (
-    <section className="container mx-auto px-4 py-16 md:py-24 text-left">
+    <section className="container mx-auto px-4 py-16 text-left md:py-24">
       <div className="max-w-3xl space-y-8">
         <div className="space-y-4">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground">
+          <h1 className="font-semibold text-3xl text-foreground md:text-4xl lg:text-5xl">
             Built with Bun from the ground up
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-lg text-muted-foreground md:text-xl">
             Full-stack starter powered by Bun. Fast, simple, ready to use.
           </p>
         </div>
-        
+
         <div className="flex flex-wrap items-center justify-start gap-6 py-4">
-          <img src={bunLogo} alt="Bun" className="h-6 w-auto opacity-70" />
-          <img src={reactLogo} alt="React" className="h-6 w-auto opacity-70" />
-          <img src={typescriptLogo} alt="TypeScript" className="h-6 w-auto opacity-70" />
-          <img src={tailwindLogo} alt="Tailwind CSS" className="h-6 w-auto opacity-70" />
-          <img src={tanstackLogo} alt="TanStack Router" className="h-6 w-auto opacity-70" />
+          <img alt="Bun" className="h-6 w-auto opacity-70" src={bunLogo} />
+          <img alt="React" className="h-6 w-auto opacity-70" src={reactLogo} />
+          <img
+            alt="TypeScript"
+            className="h-6 w-auto opacity-70"
+            src={typescriptLogo}
+          />
+          <img
+            alt="Tailwind CSS"
+            className="h-6 w-auto opacity-70"
+            src={tailwindLogo}
+          />
+          <img
+            alt="TanStack Router"
+            className="h-6 w-auto opacity-70"
+            src={tanstackLogo}
+          />
         </div>
-        
-        <div className="flex flex-col sm:flex-row items-start justify-start gap-4 pt-4">
-          <Button size="lg" className="font-semibold">
+
+        <div className="flex flex-col items-start justify-start gap-4 pt-4 sm:flex-row">
+          <Button className="font-semibold" size="lg">
             Get started now
           </Button>
-          <Button variant="outline" size="lg" className="font-semibold" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <Button asChild className="font-semibold" size="lg" variant="outline">
+            <a
+              href="https://github.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               Github Repo
             </a>
           </Button>
@@ -40,4 +56,3 @@ export function Hero() {
     </section>
   );
 }
-
