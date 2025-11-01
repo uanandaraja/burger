@@ -29,10 +29,10 @@ export function Hero() {
         <div className="flex flex-wrap items-center justify-start gap-6 py-4">
           {techStack.map((tech) => (
             <img
-              key={tech.name}
               alt={tech.name}
               className="h-6 w-auto opacity-70"
               height={24}
+              key={tech.name}
               src={tech.src}
               width={24}
             />
