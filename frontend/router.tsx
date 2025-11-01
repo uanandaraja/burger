@@ -6,9 +6,9 @@ import {
   useRouterState,
 } from "@tanstack/react-router";
 import { LandingHeader } from "./components/landing";
-import { Auth } from "./pages/Auth";
-import { Dashboard } from "./pages/Dashboard";
-import { Home } from "./pages/Home";
+import { Auth } from "./pages/auth";
+import { Dashboard } from "./pages/dashboard";
+import { Home } from "./pages/home";
 
 function RootComponent() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });

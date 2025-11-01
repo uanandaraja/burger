@@ -1,4 +1,4 @@
-export { Features } from "./Features";
+export { Features } from "./features";
 export { Footer } from "./Footer";
-export { Hero } from "./Hero";
-export { LandingHeader } from "./LandingHeader";
+export { Hero } from "./hero";
+export { LandingHeader } from "./landing-header";
