@@ -8,7 +8,6 @@ Full stack app using Bun 1.3, React 19, TypeScript, Tailwind CSS, and TanStack R
 
 ```bash
 bun install
-bun run auth:migrate  # Run Better Auth migrations
 bun run db:generate   # Generate Drizzle migrations (if schema changed)
 bun run db:migrate    # Apply Drizzle migrations
 bun dev               # Start dev server with HMR
@@ -63,7 +62,7 @@ burger/
 
 **Database**: Drizzle ORM with Bun's native SQL. Schema in `backend/db/schema.ts`. Better Auth tables included for type safety. Migrations via Drizzle Kit.
 
-**Auth**: Better Auth with magic link (Resend) and Google OAuth. Schema managed separately via Better Auth CLI.
+**Auth**: Better Auth with magic link (Resend) and Google OAuth.
 
 **Frontend**: TanStack Router handles client-side routing. Landing page uses LandingHeader, auth page has no header. See [TanStack Router docs](https://tanstack.com/router/latest).
 
