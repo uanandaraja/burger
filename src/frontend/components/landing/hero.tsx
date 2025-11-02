@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
-import bunLogo from "@/public/logos/bun.svg";
-import reactLogo from "@/public/logos/react_light.svg";
-import tailwindLogo from "@/public/logos/tailwindcss.svg";
-import tanstackLogo from "@/public/logos/tanstack.svg";
-import typescriptLogo from "@/public/logos/typescript.svg";
+
+const bunLogo = "/public/logos/bun.svg";
+const reactLogo = "/public/logos/react_light.svg";
+const tailwindLogo = "/public/logos/tailwindcss.svg";
+const tanstackLogo = "/public/logos/tanstack.svg";
+const typescriptLogo = "/public/logos/typescript.svg";
 
 const techStack = [
   { name: "Bun", src: bunLogo },

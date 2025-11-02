@@ -1,4 +1,4 @@
-import { useSession } from "@/lib/auth-client";
+import { useSession } from "../lib/auth-client";
 
 export function Dashboard() {
   const { data: session } = useSession();

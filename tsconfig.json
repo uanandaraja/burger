@@ -17,7 +17,11 @@
     "noImplicitOverride": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./frontend/*"]
+      "@/*": ["src/*"],
+      "@/components/*": ["src/frontend/components/*"],
+      "@/lib/*": ["src/frontend/lib/*"],
+      "@/pages/*": ["src/frontend/pages/*"],
+      "@/public/*": ["src/public/*"]
     },
     "noUnusedLocals": false,
     "noUnusedParameters": false,

@@ -107,8 +107,8 @@ if (existsSync(outdir)) {
 
 const start = performance.now();
 
-const entrypoints = [...new Bun.Glob("**.html").scanSync("frontend")]
-  .map((a) => path.resolve("frontend", a))
+const entrypoints = [...new Bun.Glob("**.html").scanSync("src/frontend")]
+  .map((a) => path.resolve("src/frontend", a))
   .filter((dir) => !dir.includes("node_modules"));
 
 const result = await Bun.build({
