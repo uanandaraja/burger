@@ -4,11 +4,17 @@
   "files": {
     "includes": ["**", "!build.ts", "!src/frontend/components/ui"]
   },
+  "javascript": {
+    "globals": ["Bun"]
+  },
   "linter": {
     "rules": {
       "style": {
         "useConsistentTypeDefinitions": {
           "level": "warn"
+        },
+        "useFilenamingConvention": {
+          "level": "off"
         }
       }
     }
