@@ -1,4 +1,5 @@
-import { UserCircle, SignOut } from "@phosphor-icons/react";
+import { SignOut, UserCircle } from "@phosphor-icons/react";
+import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +12,6 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "../components/ui/sidebar";
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { signOut } from "../lib/auth-client";
 
 export function NavUser({
@@ -33,7 +33,7 @@ export function NavUser({
       const names = userName.split(" ");
       if (names.length >= 2) {
         const firstName = names[0];
-        const lastName = names[names.length - 1];
+        const lastName = names.at(-1);
         if (firstName && lastName) {
           return `${firstName[0]}${lastName[0]}`.toUpperCase();
         }
@@ -54,16 +54,16 @@ export function NavUser({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton
-              size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+              size="lg"
             >
               <Avatar className="h-8 w-8">
-                <AvatarImage src={user?.image || undefined} alt={displayName} />
+                <AvatarImage alt={displayName} src={user?.image || undefined} />
                 <AvatarFallback>
                   {isCollapsed ? (
                     <UserCircle className="h-4 w-4" weight="duotone" />
                   ) : (
-                    <span className="text-xs font-medium">{getInitials()}</span>
+                    <span className="font-medium text-xs">{getInitials()}</span>
                   )}
                 </AvatarFallback>
               </Avatar>
@@ -71,7 +71,7 @@ export function NavUser({
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">{displayName}</span>
                   {user?.email && user?.name && (
-                    <span className="truncate text-xs text-muted-foreground">
+                    <span className="truncate text-muted-foreground text-xs">
                       {user.email}
                     </span>
                   )}
@@ -80,9 +80,9 @@ export function NavUser({
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
+            align="end"
             className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
             side="bottom"
-            align="end"
             sideOffset={4}
           >
             <DropdownMenuItem onClick={() => signOut()}>
