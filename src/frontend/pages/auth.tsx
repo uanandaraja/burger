@@ -7,12 +7,13 @@ import { signIn } from "../lib/auth-client";
 
 export function Auth() {
   const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isMagicLinkLoading, setIsMagicLinkLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [message, setMessage] = useState("");
 
   const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+    setIsMagicLinkLoading(true);
     setMessage("");
 
     try {
@@ -24,12 +25,12 @@ export function Auth() {
     } catch (_error) {
       setMessage("Something went wrong. Please try again.");
     } finally {
-      setIsLoading(false);
+      setIsMagicLinkLoading(false);
     }
   };
 
   const handleGoogleSignIn = async () => {
-    setIsLoading(true);
+    setIsGoogleLoading(true);
     try {
       await signIn.social({
         provider: "google",
@@ -37,7 +38,7 @@ export function Auth() {
       });
     } catch (_error) {
       setMessage("Something went wrong. Please try again.");
-      setIsLoading(false);
+      setIsGoogleLoading(false);
     }
   };
 
@@ -57,7 +58,7 @@ export function Auth() {
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
             <Input
-              disabled={isLoading}
+              disabled={isMagicLinkLoading || isGoogleLoading}
               id="email"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
@@ -77,11 +78,11 @@ export function Auth() {
 
           <Button
             className="w-full font-semibold"
-            disabled={isLoading}
+            disabled={isMagicLinkLoading || isGoogleLoading}
             size="lg"
             type="submit"
           >
-            {isLoading ? "Sending..." : "Send magic link"}
+            {isMagicLinkLoading ? "Sending..." : "Send magic link"}
           </Button>
 
           <div className="relative">
@@ -97,13 +98,13 @@ export function Auth() {
 
           <Button
             className="w-full font-semibold"
-            disabled={isLoading}
+            disabled={isMagicLinkLoading || isGoogleLoading}
             onClick={handleGoogleSignIn}
             size="lg"
             type="button"
             variant="outline"
           >
-            Sign in with Google
+            {isGoogleLoading ? "Signing in..." : "Sign in with Google"}
           </Button>
 
           <div className="text-center text-muted-foreground text-sm">
