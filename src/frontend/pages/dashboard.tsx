@@ -7,14 +7,9 @@ export function Dashboard() {
   return (
     <DashboardLayout>
       <div className="flex flex-col gap-8 p-4">
-        <div>
-          <h1 className="text-3xl font-semibold tracking-wide mb-2">
-            Overview
-          </h1>
-          <p className="text-muted-foreground text-lg">
-            {session?.user?.name || session?.user?.email?.split("@")[0] || "Guest"}
-          </p>
-        </div>
+        <p className="text-muted-foreground text-lg">
+          Welcome back, {session?.user?.name || session?.user?.email?.split("@")[0] || "Guest"}
+        </p>
 
         {session?.user ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

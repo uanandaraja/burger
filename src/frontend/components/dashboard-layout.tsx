@@ -53,6 +53,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               orientation="vertical"
               className="mr-2 data-[orientation=vertical]:h-4"
             />
+            <h1 className="text-base font-medium">Overview</h1>
           </div>
         </header>
         <div className="flex flex-1 flex-col">{children}</div>
