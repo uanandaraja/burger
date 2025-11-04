@@ -6,7 +6,7 @@ export function LandingHeader() {
     <header className="bg-background">
       <div className="container mx-auto px-4 py-4">
         <div className="mx-auto flex max-w-4xl items-center justify-between">
-          <Link className="font-semibold text-foreground text-xl" to="/">
+          <Link className="font-semibold text-foreground text-lg" to="/">
             Burger
           </Link>
           <Button asChild className="font-semibold" variant="outline">
