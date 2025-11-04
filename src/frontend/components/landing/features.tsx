@@ -1,4 +1,9 @@
-import { Rocket, ShieldCheck, Lightning, SquaresFour } from "@phosphor-icons/react";
+import {
+  Lightning,
+  Rocket,
+  ShieldCheck,
+  SquaresFour,
+} from "@phosphor-icons/react";
 
 export function Features() {
   const features = [
@@ -31,21 +36,21 @@ export function Features() {
           What's included
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {features.map((feature) => {
-          const Icon = feature.icon;
-          return (
-            <div
-              className="space-y-2 rounded-lg border border-border bg-card p-6"
-              key={feature.title}
-            >
-              <Icon className="h-6 w-6 text-foreground" weight="duotone" />
-              <h3 className="font-semibold text-card-foreground text-base">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </div>
-          );
-        })}
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                className="space-y-2 rounded-lg border border-border bg-card p-6"
+                key={feature.title}
+              >
+                <Icon className="h-6 w-6 text-foreground" weight="duotone" />
+                <h3 className="font-semibold text-base text-card-foreground">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

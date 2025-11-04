@@ -1,8 +1,8 @@
-import { House, User, Gear } from "@phosphor-icons/react";
+import { Gear, House, User } from "@phosphor-icons/react";
 import {
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarGroupContent,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,

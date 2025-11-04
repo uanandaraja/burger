@@ -1,5 +1,5 @@
-import { useSession } from "../lib/auth-client";
 import { DashboardLayout } from "../components/dashboard-layout";
+import { useSession } from "../lib/auth-client";
 
 export function Dashboard() {
   const { data: session } = useSession();
@@ -7,38 +7,41 @@ export function Dashboard() {
   return (
     <DashboardLayout>
       <div className="flex flex-col gap-8 p-4">
-        <p className="text-muted-foreground text-lg">
-          Welcome back, {session?.user?.name || session?.user?.email?.split("@")[0] || "Guest"}
+        <p className="text-lg text-muted-foreground">
+          Welcome back,{" "}
+          {session?.user?.name ||
+            session?.user?.email?.split("@")[0] ||
+            "Guest"}
         </p>
 
         {session?.user ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-2">Account Status</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+              <h3 className="mb-2 font-semibold text-lg">Account Status</h3>
+              <p className="mb-4 text-muted-foreground text-sm">
                 Your account is active and in good standing
               </p>
               <div className="flex items-center space-x-2">
-                <div className="h-2 w-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm font-semibold">Active</span>
+                <div className="h-2 w-2 rounded-full bg-green-500" />
+                <span className="font-semibold text-sm">Active</span>
               </div>
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-2">Email</h3>
-              <p className="text-sm text-muted-foreground break-all">
+              <h3 className="mb-2 font-semibold text-lg">Email</h3>
+              <p className="break-all text-muted-foreground text-sm">
                 {session.user.email}
               </p>
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-              <h3 className="text-lg font-semibold mb-2">Last Login</h3>
-              <p className="text-sm text-muted-foreground">Just now</p>
+              <h3 className="mb-2 font-semibold text-lg">Last Login</h3>
+              <p className="text-muted-foreground text-sm">Just now</p>
             </div>
           </div>
         ) : (
           <div className="rounded-xl border border-border bg-card p-12 text-center">
-            <h3 className="text-lg font-semibold mb-2">Not Authenticated</h3>
+            <h3 className="mb-2 font-semibold text-lg">Not Authenticated</h3>
             <p className="text-muted-foreground">
               Please sign in to access your dashboard
             </p>

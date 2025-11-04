@@ -1,17 +1,15 @@
-import { useSession } from "../lib/auth-client";
+import { Separator } from "../components/ui/separator";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
+  SidebarInset,
   SidebarMenuButton,
-  SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-  SidebarInset,
 } from "../components/ui/sidebar";
-import { Separator } from "../components/ui/separator";
+import { useSession } from "../lib/auth-client";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
 
@@ -27,8 +25,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       <Sidebar collapsible="icon">
         <SidebarHeader>
           <SidebarMenuButton
-            size="lg"
             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+            size="lg"
           >
             <div className="hidden aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground group-data-[collapsible=icon]:flex">
               <span className="font-semibold">B</span>
@@ -50,10 +48,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator
-              orientation="vertical"
               className="mr-2 data-[orientation=vertical]:h-4"
+              orientation="vertical"
             />
-            <h1 className="text-base font-medium">Overview</h1>
+            <h1 className="font-medium text-base">Overview</h1>
           </div>
         </header>
         <div className="flex flex-1 flex-col">{children}</div>
