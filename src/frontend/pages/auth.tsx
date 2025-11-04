@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { Sparkle, GoogleLogo } from "@phosphor-icons/react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -82,6 +83,7 @@ export function Auth() {
             size="lg"
             type="submit"
           >
+            <Sparkle className="h-4 w-4" weight="duotone" />
             {isMagicLinkLoading ? "Sending..." : "Send magic link"}
           </Button>
 
@@ -104,6 +106,7 @@ export function Auth() {
             type="button"
             variant="outline"
           >
+            <GoogleLogo className="h-4 w-4" weight="duotone" />
             {isGoogleLoading ? "Signing in..." : "Sign in with Google"}
           </Button>
 
