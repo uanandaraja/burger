@@ -17,7 +17,7 @@ const techStack = [
 export function Hero() {
   return (
     <section className="container mx-auto px-4 py-16 text-left md:py-24">
-      <div className="max-w-3xl space-y-8">
+      <div className="mx-auto max-w-4xl space-y-8">
         <div className="space-y-4">
           <h1 className="font-semibold text-3xl text-foreground md:text-4xl lg:text-5xl">
             Built with Bun from the ground up
